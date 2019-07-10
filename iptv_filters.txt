@@ -1,2 +1,4 @@
 EU | BELGIUM
-AM | USA | Premium
+AM | USA
+AM | CANADA
+EU | France

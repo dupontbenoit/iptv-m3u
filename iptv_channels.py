@@ -36,6 +36,7 @@ class M3UFile:
         results = []
         keep_next_row = False
         with open(self.file, "r", encoding="utf8") as f:
+            # file header
             results.append(f.readline())
             for line in f:
                 if keep_next_row:
@@ -77,6 +78,7 @@ if __name__ == "__main__":
             keywords = init_filters(args.filters)
             with open(args.output, "w", encoding="utf8") as output:
                 for line in m3u.filter(keywords):
+                    print(line)
                     output.write(line)
     else:
         parser.error('You need to pass at least the input file')
