@@ -3,6 +3,10 @@
 Filter a big IPTV M3U file to smaller one with only the type of channels you need.
 
 ```bash
+sample usage : iptv_channels.py --input original.m3u --output filtered.m3u --filters iptv_filters.txt
+```
+
+```bash
 usage: iptv_channels.py [-h] [--input INPUT] [--output OUTPUT]
                         [--filters FILTERS] [--list_groups]
 
