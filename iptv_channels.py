@@ -53,9 +53,7 @@ class M3UFile:
 Load filters file
 """
 def init_filters(filter_file):
-    with open(filter_file, "r", encoding="utf8") as filters_file:
-        keywords = filters_file.readlines()
-    return keywords
+    return [line.rstrip('\n') for line in open(filter_file, encoding="utf8")]
 
 
 if __name__ == "__main__":
@@ -76,6 +74,7 @@ if __name__ == "__main__":
                 print(line)
         if args.input and args.output and args.filters:
             keywords = init_filters(args.filters)
+            print(keywords)
             with open(args.output, "w", encoding="utf8") as output:
                 for line in m3u.filter(keywords):
                     print(line)
