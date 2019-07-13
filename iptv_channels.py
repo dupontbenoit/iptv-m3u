@@ -1,6 +1,7 @@
 import re
 import sys
 import argparse
+from io import open
 
 keywords = {}
 
@@ -74,10 +75,10 @@ if __name__ == "__main__":
                 print(line)
         if args.input and args.output and args.filters:
             keywords = init_filters(args.filters)
-            print(keywords)
+#            print(keywords)
             with open(args.output, "w", encoding="utf8") as output:
                 for line in m3u.filter(keywords):
-                    print(line)
+#                    print(line)
                     output.write(line)
     else:
         parser.error('You need to pass at least the input file')
